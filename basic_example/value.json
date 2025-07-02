@@ -1,0 +1,248 @@
+{
+    "schema": {
+        "type": "struct",
+        "fields": [
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "int32",
+                        "optional": false,
+                        "default": 0,
+                        "field": "id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "description"
+                    },
+                    {
+                        "type": "bytes",
+                        "optional": true,
+                        "name": "org.apache.kafka.connect.data.Decimal",
+                        "version": 1,
+                        "parameters": {
+                            "scale": "2",
+                            "connect.decimal.precision": "10"
+                        },
+                        "field": "price"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "name": "io.debezium.time.ZonedTimestamp",
+                        "version": 1,
+                        "default": "1970-01-01T00:00:00.000000Z",
+                        "field": "created_at"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "name": "io.debezium.time.ZonedTimestamp",
+                        "version": 1,
+                        "default": "1970-01-01T00:00:00.000000Z",
+                        "field": "updated_at"
+                    }
+                ],
+                "optional": true,
+                "name": "poc.public.products.Value",
+                "field": "before"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "int32",
+                        "optional": false,
+                        "default": 0,
+                        "field": "id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "description"
+                    },
+                    {
+                        "type": "bytes",
+                        "optional": true,
+                        "name": "org.apache.kafka.connect.data.Decimal",
+                        "version": 1,
+                        "parameters": {
+                            "scale": "2",
+                            "connect.decimal.precision": "10"
+                        },
+                        "field": "price"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "name": "io.debezium.time.ZonedTimestamp",
+                        "version": 1,
+                        "default": "1970-01-01T00:00:00.000000Z",
+                        "field": "created_at"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "name": "io.debezium.time.ZonedTimestamp",
+                        "version": 1,
+                        "default": "1970-01-01T00:00:00.000000Z",
+                        "field": "updated_at"
+                    }
+                ],
+                "optional": true,
+                "name": "poc.public.products.Value",
+                "field": "after"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "version"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "connector"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "name"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": false,
+                        "field": "ts_ms"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "name": "io.debezium.data.Enum",
+                        "version": 1,
+                        "parameters": {
+                            "allowed": "true,last,false,incremental"
+                        },
+                        "default": "false",
+                        "field": "snapshot"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "db"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "sequence"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "schema"
+                    },
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "table"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "field": "txId"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "field": "lsn"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "field": "xmin"
+                    }
+                ],
+                "optional": false,
+                "name": "io.debezium.connector.postgresql.Source",
+                "field": "source"
+            },
+            {
+                "type": "string",
+                "optional": false,
+                "field": "op"
+            },
+            {
+                "type": "int64",
+                "optional": true,
+                "field": "ts_ms"
+            },
+            {
+                "type": "struct",
+                "fields": [
+                    {
+                        "type": "string",
+                        "optional": false,
+                        "field": "id"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": false,
+                        "field": "total_order"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": false,
+                        "field": "data_collection_order"
+                    }
+                ],
+                "optional": true,
+                "name": "event.block",
+                "version": 1,
+                "field": "transaction"
+            }
+        ],
+        "optional": false,
+        "name": "poc.public.products.Envelope",
+        "version": 1
+    },
+    "payload": {
+        "before": null,
+        "after": {
+            "id": 19,
+            "name": "Keyboard",
+            "description": "Mechanical keyboard with RGB lighting",
+            "price": "Opg=",
+            "created_at": "2025-07-01T05:03:11.898964Z",
+            "updated_at": "2025-07-01T05:03:11.898964Z"
+        },
+        "source": {
+            "version": "2.4.2.Final",
+            "connector": "postgresql",
+            "name": "poc",
+            "ts_ms": 1751346191899,
+            "snapshot": "false",
+            "db": "sourcedb",
+            "sequence": "[\"26829112\",\"26830440\"]",
+            "schema": "public",
+            "table": "products",
+            "txId": 748,
+            "lsn": 26830440,
+            "xmin": null
+        },
+        "op": "c",
+        "ts_ms": 1751346191982,
+        "transaction": null
+    }
+}
