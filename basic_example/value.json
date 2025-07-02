@@ -6,102 +6,642 @@
                 "type": "struct",
                 "fields": [
                     {
+                        "type": "int64",
+                        "optional": false,
+                        "field": "trn_no"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "trn_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "nationality"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "doctype"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "passport_number"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "gender"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "birthday"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "expire_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "surname"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "given_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "issuer"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "thai_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "citizen_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "gate_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "site_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "time_stamp"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "created_by"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "created_datetime"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "updated_by"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "updated_datetime"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "middle_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "res_permit_stp_no"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "res_permit_stp_create_date"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "res_permit_stp_approve_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "res_permit_stp_due_date"
+                    },
+                    {
+                        "type": "boolean",
+                        "optional": true,
+                        "field": "result_e_signature"
+                    },
+                    {
+                        "type": "boolean",
+                        "optional": true,
+                        "field": "is_online"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "issue_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz_line1"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz_line2"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_pace"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_bac"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_pace_exception"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_bac_exception"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "atr"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_trust_status"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_certificate_signature_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "file_signature_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "file_message_digest_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_certificate_validity"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "country_signer_certificate_validity"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "all_valid"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg1_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg2_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg3_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg11_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg12_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg13_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dgcom"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dgsod"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg1"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg2"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg3"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg11"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg12"
+                    },
+                    {
                         "type": "int32",
-                        "optional": false,
-                        "default": 0,
-                        "field": "id"
-                    },
-                    {
-                        "type": "string",
-                        "optional": false,
-                        "field": "name"
+                        "optional": true,
+                        "field": "dg2_image_count"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "field": "description"
-                    },
-                    {
-                        "type": "bytes",
-                        "optional": true,
-                        "name": "org.apache.kafka.connect.data.Decimal",
-                        "version": 1,
-                        "parameters": {
-                            "scale": "2",
-                            "connect.decimal.precision": "10"
-                        },
-                        "field": "price"
+                        "field": "dg2_image0_format"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "name": "io.debezium.time.ZonedTimestamp",
-                        "version": 1,
-                        "default": "1970-01-01T00:00:00.000000Z",
-                        "field": "created_at"
+                        "field": "dg2_image1_format"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "name": "io.debezium.time.ZonedTimestamp",
-                        "version": 1,
-                        "default": "1970-01-01T00:00:00.000000Z",
-                        "field": "updated_at"
+                        "field": "dg2_image2_format"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "message_type_id"
                     }
                 ],
                 "optional": true,
-                "name": "poc.public.products.Value",
+                "name": "poc.public.trn_passport.Value",
                 "field": "before"
             },
             {
                 "type": "struct",
                 "fields": [
                     {
+                        "type": "int64",
+                        "optional": false,
+                        "field": "trn_no"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "trn_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "nationality"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "doctype"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "passport_number"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "gender"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "birthday"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "expire_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "surname"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "given_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "issuer"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "thai_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "citizen_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "gate_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "site_id"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "time_stamp"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "created_by"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "created_datetime"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "updated_by"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "updated_datetime"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "middle_name"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "res_permit_stp_no"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "res_permit_stp_create_date"
+                    },
+                    {
+                        "type": "int64",
+                        "optional": true,
+                        "name": "io.debezium.time.MicroTimestamp",
+                        "version": 1,
+                        "field": "res_permit_stp_approve_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "res_permit_stp_due_date"
+                    },
+                    {
+                        "type": "boolean",
+                        "optional": true,
+                        "field": "result_e_signature"
+                    },
+                    {
+                        "type": "boolean",
+                        "optional": true,
+                        "field": "is_online"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "issue_date"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz_line1"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "ocr_mrz_line2"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_pace"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_bac"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_pace_exception"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "auth_bac_exception"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "atr"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_trust_status"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_certificate_signature_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "file_signature_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "file_message_digest_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "document_signer_certificate_validity"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "country_signer_certificate_validity"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "all_valid"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg1_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg2_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg3_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg11_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg12_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg13_hash_check"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dgcom"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dgsod"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg1"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg2"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg3"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg11"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "dg12"
+                    },
+                    {
                         "type": "int32",
-                        "optional": false,
-                        "default": 0,
-                        "field": "id"
-                    },
-                    {
-                        "type": "string",
-                        "optional": false,
-                        "field": "name"
+                        "optional": true,
+                        "field": "dg2_image_count"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "field": "description"
-                    },
-                    {
-                        "type": "bytes",
-                        "optional": true,
-                        "name": "org.apache.kafka.connect.data.Decimal",
-                        "version": 1,
-                        "parameters": {
-                            "scale": "2",
-                            "connect.decimal.precision": "10"
-                        },
-                        "field": "price"
+                        "field": "dg2_image0_format"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "name": "io.debezium.time.ZonedTimestamp",
-                        "version": 1,
-                        "default": "1970-01-01T00:00:00.000000Z",
-                        "field": "created_at"
+                        "field": "dg2_image1_format"
                     },
                     {
                         "type": "string",
                         "optional": true,
-                        "name": "io.debezium.time.ZonedTimestamp",
-                        "version": 1,
-                        "default": "1970-01-01T00:00:00.000000Z",
-                        "field": "updated_at"
+                        "field": "dg2_image2_format"
+                    },
+                    {
+                        "type": "string",
+                        "optional": true,
+                        "field": "message_type_id"
                     }
                 ],
                 "optional": true,
-                "name": "poc.public.products.Value",
+                "name": "poc.public.trn_passport.Value",
                 "field": "after"
             },
             {
@@ -214,35 +754,90 @@
             }
         ],
         "optional": false,
-        "name": "poc.public.products.Envelope",
+        "name": "poc.public.trn_passport.Envelope",
         "version": 1
     },
     "payload": {
         "before": null,
         "after": {
-            "id": 19,
-            "name": "Keyboard",
-            "description": "Mechanical keyboard with RGB lighting",
-            "price": "Opg=",
-            "created_at": "2025-07-01T05:03:11.898964Z",
-            "updated_at": "2025-07-01T05:03:11.898964Z"
+            "trn_no": 457093,
+            "trn_id": "S07D217OD220240820014641",
+            "nationality": "CHN",
+            "doctype": "P",
+            "passport_number": "EJ9512372",
+            "gender": "M",
+            "birthday": "19880621",
+            "expire_date": "20330222",
+            "surname": "WU",
+            "given_name": "XULONG",
+            "issuer": "CHN",
+            "thai_name": null,
+            "citizen_id": null,
+            "gate_id": "D217",
+            "site_id": "S07",
+            "time_stamp": "20240820014647",
+            "created_by": null,
+            "created_datetime": 1724118407326449,
+            "updated_by": null,
+            "updated_datetime": null,
+            "middle_name": null,
+            "res_permit_stp_no": null,
+            "res_permit_stp_create_date": null,
+            "res_permit_stp_approve_date": null,
+            "res_permit_stp_due_date": null,
+            "result_e_signature": true,
+            "is_online": true,
+            "issue_date": null,
+            "ocr_mrz": "POCHNWU<<XULONG<<<<<<<<<<<<<<<<<<<<<<<<<<<<<EJ95123728CHN8806219M3302222MOOCNAPBMBPKA922",
+            "ocr_mrz_line1": "POCHNWU<<XULONG<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+            "ocr_mrz_line2": "EJ95123728CHN8806219M3302222MOOCNAPBMBPKA922",
+            "auth_pace": "Invalid",
+            "auth_bac": "Valid",
+            "auth_pace_exception": "Error code 1 / PACE failed",
+            "auth_bac_exception": null,
+            "atr": "3B 88 80 01 E0 F3 5E 11 77 81 B3 10 00",
+            "document_signer_trust_status": "Valid",
+            "document_signer_certificate_signature_check": "Valid",
+            "file_signature_check": "Valid",
+            "file_message_digest_check": "Valid",
+            "document_signer_certificate_validity": "Valid",
+            "country_signer_certificate_validity": "Valid",
+            "all_valid": "True",
+            "dg1_hash_check": "Valid",
+            "dg2_hash_check": "Valid",
+            "dg3_hash_check": null,
+            "dg11_hash_check": "Valid",
+            "dg12_hash_check": "Valid",
+            "dg13_hash_check": null,
+            "dgcom": "YBlfAQQwMTA3XzYGMDQwMDAwXAdgYXVrbHdv",
+            "dgsod": "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",
+            "dg1": "YVtfH1hQT0NITldVPDxYVUxPTkc8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PDw8PEVKOTUxMjM3MjhDSE44ODA2MjE5TTMzMDIyMjJNT09DTkFQQk1CUEtBOTIy",
+            "dg2": "Found",
+            "dg3": null,
+            "dg11": "ax9cBF8OXw9fDgnlkLTml63pvplfDwpXVTw8WFVMT05H",
+            "dg12": "bAdcAl8bXxsA",
+            "dg2_image_count": 1,
+            "dg2_image0_format": "Jpeg2K",
+            "dg2_image1_format": null,
+            "dg2_image2_format": null,
+            "message_type_id": "MRZ"
         },
         "source": {
             "version": "2.4.2.Final",
             "connector": "postgresql",
             "name": "poc",
-            "ts_ms": 1751346191899,
-            "snapshot": "false",
+            "ts_ms": 1751448514555,
+            "snapshot": "first",
             "db": "sourcedb",
-            "sequence": "[\"26829112\",\"26830440\"]",
+            "sequence": "[null,\"63534896\"]",
             "schema": "public",
-            "table": "products",
-            "txId": 748,
-            "lsn": 26830440,
+            "table": "trn_passport",
+            "txId": 785,
+            "lsn": 63534896,
             "xmin": null
         },
-        "op": "c",
-        "ts_ms": 1751346191982,
+        "op": "r",
+        "ts_ms": 1751448514648,
         "transaction": null
     }
 }

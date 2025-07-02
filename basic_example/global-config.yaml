@@ -1,0 +1,116 @@
+apiVersion: v1
+data:
+  AbcService__URL: http://abc-service
+  AbcService__URL_IN: http://abc-service-in
+  AbcService__URL_OUT: http://abc-service
+  AutomateBorderControlConfig__Endpoint: http://external-service
+  CORSAllowedHost: https://web.svb-sit.bu8-cwn.com
+  ConnectionStrings__CentralizeManagementDb: >-
+    Host=192.168.100.95;Port=5432;User
+    ID=postgres;Password=P@ssw0rd;Database=abcsvb-sit;Timeout=300;CommandTimeout=300;
+  ConnectionStrings__ResidencePermitStampDb: >-
+    Host=192.168.100.95;Port=5432;User
+    ID=postgres;Password=P@ssw0rd;Database=abcsvb-sit;Timeout=300;CommandTimeout=300;
+  ELASTIC_SEARCH: http://elasticsearch-master:9200
+  ElasticApm__SecretToken: Sx28A5my0n5UoQOx06zq627n
+  ElasticApm__ServerUrl: http://apm-server-apm-http:8200
+  ElasticSearch__Uri: http://elastic:8h6XRCtj74F1006n5T9tryVw@elasticsearch-es-internal-http:9200
+  FUSIONAUTH_DB_CONNECTION: jdbc:postgresql://192.168.100.95:5432/abcsvb-fusionauth
+  FUSIONAUTH_DB_PASSWORD: P@ssw0rd
+  FUSIONAUTH_DB_USERNAME: atcsvb
+  FusionAuth__ApiKey: 60EBoSfuU3GrG1aVFGeN8XbKAipSg_53XnQXK4sWhGL9mXukPvmBch2v
+  FusionAuth__AutomaticChannelId: a7d8dba4-acd6-4e4d-bff4-8c8c2e61b65e
+  FusionAuth__Endpoint: http://fusionauth-service/
+  FusionAuth__Useradmin: 01246457-feb9-41f8-8bfc-75d55f65053b,30778c95-7d63-4dbd-86df-bca88d97f79d
+  Kafka__BootstrapServers: kafka:9092
+  Kafka__SaslPassword: P@ssw0rd
+  Kafka__SaslUsername: user1
+  Kafka__Topic__CentralizeManagementNotification: CENTRALIZE_MANAGEMENT_NOTIFICATION_SIT
+  Kafka__Topic__DashboardMain: DASHBOARD_MAIN_SIT
+  Kafka__Topic__DigitalSignage: digital-signage-sit
+  Kafka__Topic__GateMonitoringDashboard: GATE_MONITORING_DASHBOARD_SIT
+  Kafka__Topic__GateRecordTravelInfo: GATE_RECORD_TRAVEL_INFO
+  Kafka__Topic__LdifUpdate: ldif-update-sit
+  Minio__AccessKey: OF3TCPOOxkhZW6hDBYhk
+  Minio__BucketName: centralize-management-bucket
+  Minio__Endpoint: minio.svb-sit.bu8-cwn.com
+  Minio__SSL: 'true'
+  Minio__SecretKey: 1MH99FAKlRnB5a045CVbKbBYqdKk1Qbvy4VtBJVf
+  POSTGRES_PASSWORD: P@ssw0rd
+  POSTGRES_USERNAME: postgres
+  Redis__URL__Primary: redis-stack:6379
+  Redis__URL__Reader: redis-stack:6379
+  Service__SendRecordTravelInformation: http://external-service/msc-broker-api/send-record-travel-info
+  Service__VerifyFaceService: http://192.168.100.94:8000
+  Service__VerifyFingerService: http://192.168.40.20:5000
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"v1","data":{"AbcService__URL":"http://abc-service","AbcService__URL_IN":"http://abc-service-in","AbcService__URL_OUT":"http://abc-service","AutomateBorderControlConfig__Endpoint":"http://external-service","ConnectionStrings__CentralizeManagementDb":"Host=192.168.100.95;Port=5432;User
+      ID=postgres;Password=P@ssw0rd;Database=abcsvb-sit;Timeout=300;CommandTimeout=300;","ConnectionStrings__ResidencePermitStampDb":"Host=192.168.100.95;Port=5432;User
+      ID=postgres;Password=P@ssw0rd;Database=abcsvb-sit;Timeout=300;CommandTimeout=300;","ELASTIC_SEARCH":"http://elasticsearch-master:9200","ElasticApm__SecretToken":"Sx28A5my0n5UoQOx06zq627n","ElasticApm__ServerUrl":"http://apm-server-apm-http:8200","ElasticSearch__Uri":"http://elastic:8h6XRCtj74F1006n5T9tryVw@elasticsearch-es-internal-http:9200","FUSIONAUTH_DB_CONNECTION":"jdbc:postgresql://192.168.100.95:5432/abcsvb-fusionauth","FUSIONAUTH_DB_PASSWORD":"P@ssw0rd","FUSIONAUTH_DB_USERNAME":"atcsvb","FusionAuth__ApiKey":"60EBoSfuU3GrG1aVFGeN8XbKAipSg_53XnQXK4sWhGL9mXukPvmBch2v","FusionAuth__AutomaticChannelId":"a7d8dba4-acd6-4e4d-bff4-8c8c2e61b65e","FusionAuth__Endpoint":"http://fusionauth-service/","FusionAuth__Useradmin":"01246457-feb9-41f8-8bfc-75d55f65053b,30778c95-7d63-4dbd-86df-bca88d97f79d","Kafka__BootstrapServers":"kafka:9092","Kafka__SaslPassword":"P@ssw0rd","Kafka__SaslUsername":"user1","Kafka__Topic__CentralizeManagementNotification":"CENTRALIZE_MANAGEMENT_NOTIFICATION_SIT","Kafka__Topic__DashboardMain":"DASHBOARD_MAIN_SIT","Kafka__Topic__DigitalSignage":"digital-signage-sit","Kafka__Topic__GateMonitoringDashboard":"GATE_MONITORING_DASHBOARD_SIT","Kafka__Topic__LdifUpdate":"ldif-update-sit","Minio__AccessKey":"OF3TCPOOxkhZW6hDBYhk","Minio__BucketName":"centralize-management-bucket","Minio__Endpoint":"minio.svb-sit.bu8-cwn.com","Minio__SSL":"true","Minio__SecretKey":"1MH99FAKlRnB5a045CVbKbBYqdKk1Qbvy4VtBJVf","POSTGRES_PASSWORD":"P@ssw0rd","POSTGRES_USERNAME":"postgres","Redis__URL__Primary":"redis-stack:6379","Redis__URL__Reader":"redis-stack:6379","Service__SendRecordTravelInformation":"http://external-service/msc-broker-api/send-record-travel-info","Service__VerifyFaceService":"http://192.168.100.94:8000","Service__VerifyFingerService":"http://192.168.40.20:5000"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"global-config","namespace":"abc-bkk"}}
+  creationTimestamp: '2024-11-06T08:22:09Z'
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:AbcService__URL: {}
+          f:AbcService__URL_IN: {}
+          f:AbcService__URL_OUT: {}
+          f:AutomateBorderControlConfig__Endpoint: {}
+          f:ConnectionStrings__CentralizeManagementDb: {}
+          f:ConnectionStrings__ResidencePermitStampDb: {}
+          f:ELASTIC_SEARCH: {}
+          f:ElasticApm__SecretToken: {}
+          f:ElasticApm__ServerUrl: {}
+          f:ElasticSearch__Uri: {}
+          f:FUSIONAUTH_DB_CONNECTION: {}
+          f:FUSIONAUTH_DB_PASSWORD: {}
+          f:FUSIONAUTH_DB_USERNAME: {}
+          f:FusionAuth__ApiKey: {}
+          f:FusionAuth__AutomaticChannelId: {}
+          f:FusionAuth__Endpoint: {}
+          f:FusionAuth__Useradmin: {}
+          f:Kafka__BootstrapServers: {}
+          f:Kafka__SaslPassword: {}
+          f:Kafka__SaslUsername: {}
+          f:Kafka__Topic__CentralizeManagementNotification: {}
+          f:Kafka__Topic__DashboardMain: {}
+          f:Kafka__Topic__DigitalSignage: {}
+          f:Kafka__Topic__GateMonitoringDashboard: {}
+          f:Kafka__Topic__LdifUpdate: {}
+          f:Minio__AccessKey: {}
+          f:Minio__BucketName: {}
+          f:Minio__Endpoint: {}
+          f:Minio__SSL: {}
+          f:Minio__SecretKey: {}
+          f:POSTGRES_PASSWORD: {}
+          f:POSTGRES_USERNAME: {}
+          f:Redis__URL__Primary: {}
+          f:Redis__URL__Reader: {}
+          f:Service__SendRecordTravelInformation: {}
+          f:Service__VerifyFaceService: {}
+          f:Service__VerifyFingerService: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: '2024-11-06T08:22:09Z'
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          f:CORSAllowedHost: {}
+          f:Kafka__Topic__GateRecordTravelInfo: {}
+      manager: agent
+      operation: Update
+      time: '2025-02-21T07:05:07Z'
+  name: global-config
+  namespace: abc-bkk
+  resourceVersion: '295160455'
+  uid: 49f1de2a-8679-45b9-b910-611325750666
