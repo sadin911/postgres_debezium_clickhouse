@@ -66,23 +66,6 @@ else
     exit 1
 fi
 
-sleep 2
-echo "Configuring Debezium PostgreSQL connector..."
-curl -X POST -H "Content-Type: application/json" --data @debezium-postgres-connector.json http://localhost:8083/connectors
-
-sleep 2
-echo "Executing ClickHouse initialization script..."
-# Execute the ClickHouse SQL script
-# We use docker exec with clickhouse client and pipe the SQL file into it
-docker exec -i clickhouse clickhouse client -u default --password password --query_id "init_script_$(date +%s)" < init.sql
-
-if [ $? -eq 0 ]; then
-    echo "ClickHouse initialization script executed successfully!"
-else
-    echo "Failed to execute ClickHouse initialization script. Please check ClickHouse logs."
-    exit 1
-fi
-
 echo "All services and initial setup complete!"
 echo "Access points:"
 echo "  Kafka UI: http://localhost:8090"

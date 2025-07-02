@@ -12,7 +12,8 @@ curl -X POST -H "Content-Type: application/json" --data '{
     "table.include.list": "public.products",
     "slot.name": "debezium_slot_products",
     "plugin.name": "pgoutput",
-    "topic.prefix": "poc"
+    "topic.prefix": "poc",
+    "decimal.handling.mode": "string" 
   }
 }' http://localhost:8083/connectors
 
