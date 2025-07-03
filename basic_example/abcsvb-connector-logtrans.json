@@ -9,7 +9,7 @@
     "database.password": "password",
     "database.dbname" : "sourcedb",
     "database.server.name": "abcsvb",
-    "table.include.list": "public.trn_passport,public.log_trans",
+    "table.include.list": "public.log_trans",
     "slot.name": "debezium_slot_abc",
     "plugin.name": "pgoutput",
     "topic.prefix": "poc",

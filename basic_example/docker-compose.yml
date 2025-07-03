@@ -110,6 +110,7 @@ services:
       CLICKHOUSE_PASSWORD: password
     networks:
       - analytics-network
+    restart: unless-stopped
 
 volumes:
   clickhouse_data:

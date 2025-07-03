@@ -5,7 +5,7 @@ echo "Starting Docker Compose services..."
 # Start all services in detached mode
 docker-compose down 
 docker volume prune
-docker volume rm basic_example_clickhouse_data
+#docker volume rm basic_example_clickhouse_data
 docker-compose up --build -d
 if [ $? -eq 0 ]; then
     echo "All Docker Compose services started successfully!"
@@ -112,7 +112,7 @@ echo "Executing ClickHouse initialization script..."
 # We use docker exec with clickhouse client and pipe the SQL file into it
 # docker exec -i clickhouse clickhouse client -u default --password password --query_id "init_script_$(date +%s)" < init.sql
 # docker exec -i clickhouse clickhouse client -u default --password password --query_id "init_script_$(date +%s)" < init_transpassport.sql
-
+# docker exec -i clickhouse clickhouse client -u default --password password --query_id "init_script_$(date +%s)" < init_logtrans.sql
 
 if [ $? -eq 0 ]; then # <--- เพิ่มการตรวจสอบนี้แล้ว
     echo "ClickHouse initialization script executed successfully!"
