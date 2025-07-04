@@ -14,65 +14,31 @@ else
     exit 1
 fi
 
-echo "Waiting for PostgreSQL to be ready..."
+# echo "Waiting for PostgreSQL to be ready..."
 # Wait for PostgreSQL to be ready
 # Use a timeout for pg_isready to prevent infinite loop in case of unrecoverable issues
-TIMEOUT_SECONDS=60
-START_TIME=$(date +%s)
-until docker exec postgresql pg_isready -U user -d sourcedb > /dev/null 2>&1; do
-  if (( $(date +%s) - START_TIME > TIMEOUT_SECONDS )); then
-    echo "ERROR: PostgreSQL did not become ready within $TIMEOUT_SECONDS seconds. Exiting."
-    exit 1
-  fi
-  echo "PostgreSQL is unavailable - sleeping (checked for $(($(date +%s) - START_TIME))s / ${TIMEOUT_SECONDS}s)"
-  sleep 2
-done
-echo "PostgreSQL is ready!"
+# TIMEOUT_SECONDS=60
+# START_TIME=$(date +%s)
+# until docker exec postgresql pg_isready -U user -d sourcedb > /dev/null 2>&1; do
+#   if (( $(date +%s) - START_TIME > TIMEOUT_SECONDS )); then
+#     echo "ERROR: PostgreSQL did not become ready within $TIMEOUT_SECONDS seconds. Exiting."
+#     exit 1
+#   fi
+#   echo "PostgreSQL is unavailable - sleeping (checked for $(($(date +%s) - START_TIME))s / ${TIMEOUT_SECONDS}s)"
+#   sleep 2
+# done
+# echo "PostgreSQL is ready!"
 
-echo "Creating POC table in PostgreSQL and inserting initial data..."
-# Execute SQL commands to create a table in the sourcedb
-# Note: Escaped $$ as \$ for shell interpretation
-docker exec postgresql psql -U user -d sourcedb -c "
-    CREATE TABLE IF NOT EXISTS products (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        description TEXT,
-        price NUMERIC(10, 2),
-        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-    );
-    -- Insert some initial data
-    INSERT INTO products (name, description, price) VALUES
-    ('Laptop', 'High-performance laptop for work and gaming', 1200.00),
-    ('Mouse', 'Ergonomic wireless mouse', 25.00)
-    ON CONFLICT (id) DO NOTHING;
-    
-    -- Add a trigger to update 'updated_at' column automatically
-    CREATE OR REPLACE FUNCTION update_updated_at_column()
-    RETURNS TRIGGER AS \$\$
-    BEGIN
-        NEW.updated_at = NOW();
-        RETURN NEW;
-    END;
-    \$\$ LANGUAGE plpgsql;
+# echo "Executing PostgreSQL initialization script (create tables and insert data)..."
+# # Execute the combined SQL script
+# docker exec -i postgresql psql -U user -d sourcedb < init_postgresql_data.sql
+# if [ $? -eq 0 ]; then
+#     echo "PostgreSQL tables created and initial data inserted successfully."
+# else
+#     echo "ERROR: Failed to initialize PostgreSQL data. Please check the PostgreSQL logs."
+#     exit 1
+# fi
 
-    DO \$\$ BEGIN
-        IF NOT EXISTS (SELECT 1 FROM pg_trigger WHERE tgname = 'set_updated_at_products') THEN
-            CREATE TRIGGER set_updated_at_products
-            BEFORE UPDATE ON products
-            FOR EACH ROW
-            EXECUTE FUNCTION update_updated_at_column();
-        END IF;
-    END \$\$;
-
-    ALTER TABLE products REPLICA IDENTITY FULL; -- Essential for Debezium CDC
-"
-if [ $? -eq 0 ]; then
-    echo "POC table 'products' created and initial data inserted successfully in PostgreSQL."
-else
-    echo "ERROR: Failed to create POC table in PostgreSQL or insert initial data. Please check the PostgreSQL logs."
-    exit 1
-fi
 
 echo "Waiting for Kafka Connect (Debezium) to be ready..."
 # Wait for Kafka Connect to be ready (assuming it's on localhost:8083)
@@ -107,7 +73,16 @@ else
     exit 1
 fi
 
-echo "Executing ClickHouse initialization script..."
+# echo "Configuring Debezium PostgreSQL connector (abcsvb-connector)..."
+# curl -X POST -H "Content-Type: application/json" --data @debezium-pg-connector.json http://localhost:8083/connectors
+# if [ $? -eq 0 ]; then
+#     echo "Debezium 'debezium-pg-connector' configured successfully."
+# else
+#     echo "ERROR: Failed to configure Debezium 'abcsvb-connector'. Please check Debezium Connect logs."
+#     exit 1
+# fi
+
+# echo "Executing ClickHouse initialization script..."
 # Execute the ClickHouse SQL script
 # We use docker exec with clickhouse client and pipe the SQL file into it
 # docker exec -i clickhouse clickhouse client -u default --password password --query_id "init_script_$(date +%s)" < init.sql

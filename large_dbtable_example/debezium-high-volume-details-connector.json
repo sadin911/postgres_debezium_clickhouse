@@ -1,0 +1,21 @@
+{
+  "name": "high-volume-details-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "postgresql",
+    "database.port": "5432",
+    "database.user": "user",
+    "database.password": "password",
+    "database.dbname": "sourcedb",
+    "database.server.name": "db_server_high_volume_details",  
+    "schema.include.list": "public",
+    "table.include.list": "public.transaction_details",  
+    "topic.prefix": "high_volume_poc", 
+    "heartbeat.interval.ms": "5000",
+    "publication.autocreate.mode": "all_tables",
+    "plugin.name": "pgoutput",
+    "snapshot.mode": "initial",
+    "decimal.handling.mode": "string"
+  }
+}
